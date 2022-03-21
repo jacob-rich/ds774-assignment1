@@ -29,7 +29,7 @@ body
     opacity: 0.25;
 }
 
-.jumbotron *
+.jumbotron img, .jumbotron h1, .jumbotron p
 {
     opacity: 1;
 }
