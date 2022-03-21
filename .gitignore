@@ -1,0 +1,6 @@
+flask/*
+unh_site/*
+**/*.pyc
+*.pyc
+flask_site/*
+__pycache__/app.cpython-37.pyc
