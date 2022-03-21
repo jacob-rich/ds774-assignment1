@@ -26,8 +26,10 @@ body
 .jumbotron
 {
     background-image: url("banner.jpg");
-    opacity: 0.25;
 }
 
-
+.jumbotron img
+{
+    opacity: 0.25;
+}
   
