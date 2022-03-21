@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}<title>Register</title>{% endblock %}
+{% set active_page = "admin" %}
+
+{% block content %}
+<!-- container for tablular structure: 1 row & 1 column -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <!-- Register Form -->
+      <div class="form-group">
+        <h1>Register</h1>
+        <form action="" method="post" name="register">
+          <input class="form-control" type="text" name="username" placeholder="Username" required /><br />
+          <input class="form-control" type="password" name="password" placeholder="Password" required /> <br />
+          <input class="form-control" type="password" name="password2" placeholder="Password" required /> <br />
+          <input class="btn btn-primary btn-lg" name="admin" type="submit" value="Login" />
+        </form>
+        {% if error %}
+        <h3 style="color:red"> {{ error }} </h3>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
