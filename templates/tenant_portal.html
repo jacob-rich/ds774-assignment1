@@ -58,10 +58,13 @@
         <p style="color:red"> {{ error }} </p>
         {% endif %}
         <form action="" method="post" name="admin">
-          <input class="form-control" type="text" name="username" placeholder="Username" required /><br />
-          <input class="form-control" type="password" name="password" placeholder="Password" required /> <br />
+          <input class="form-control" type="text" name="username" placeholder="Username" required style="width: 25%"/><br />
+          <input class="form-control" type="password" name="password" placeholder="Password" required style="width: 25%"/> <br />
           <input class="btn btn-primary btn-lg" name="admin" type="submit" value="Login" />
+
+          <br>
           
+          <p>Don't have a login? Register now:</p>
           <a href="{{ url_for('register')}}" class="btn btn-primary btn-lg" role="button">Register</a>
         </form>
       </div>
