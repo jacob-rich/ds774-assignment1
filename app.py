@@ -97,9 +97,9 @@ def register():
         if get_user(username):
             new_id = add_user(username, password)
             error = "Registration sucessful. Please log in."
-            return render_template('admin.html', error = error)
+            return render_template('tenant_portal.html', error = error)
         else:
-            error = f"Username {username} not available"
+            error = f"Username {username} is not available"
         
 
     return render_template('register.html', error = error, id = new_id)
