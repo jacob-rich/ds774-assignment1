@@ -96,7 +96,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
-        print("DEBUG-------------------------------------------------------------------get_user(username)= " + get_user(username))
+        print(get_user(username))
         if get_user(username):
             print("DEBUG-------------------------------------------------------------------GET_USER")
             new_id = add_user(username, password)
