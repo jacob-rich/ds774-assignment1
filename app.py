@@ -90,15 +90,21 @@ def register():
     new_id = False
 
     # If user submitted form to add a user
+    print("DEBUG-------------------------------------------------------------------REGISTER FUNCTION")
     if request.method == 'POST':
+        print("DEBUG-------------------------------------------------------------------POST")
         username = request.form['username']
         password = request.form['password']
 
         if get_user(username):
+            print("DEBUG-------------------------------------------------------------------GET_USER")
             new_id = add_user(username, password)
+            print("DEBUG-------------------------------------------------------------------NEW_ID")
             error = "Registration sucessful. Please log in."
+            print("DEBUG-------------------------------------------------------------------ERROR")
             return render_template('tenant_portal.html', error = error)
         else:
+            print("DEBUG-------------------------------------------------------------------ELSE")
             error = f"Username {username} is not available"
         
 
