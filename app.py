@@ -1,11 +1,11 @@
 from os import error
 import re
 from flask import Flask, render_template, request, url_for, redirect, session
-from functions.tenant_portal import contact_form,login_user, get_records, get_single_record, edit_record, delete_record, add_user, get_user
+from functions.tenant_portal import contact_form, login_user, get_records, get_single_record, edit_record, delete_record, add_user, get_user
 
 app = Flask(__name__)
 
-app.secret_key = "JACOB"
+app.secret_key = "IAN"
 
 @app.route("/")
 def home():
@@ -96,6 +96,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
+        print("DEBUG-------------------------------------------------------------------get_user(username)= " + get_user(username))
         if get_user(username):
             print("DEBUG-------------------------------------------------------------------GET_USER")
             new_id = add_user(username, password)
