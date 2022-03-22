@@ -54,7 +54,7 @@ def tenant_portal():
     if request.method == 'POST':
 
         # If the form was Login, perform log in steps
-        if request.form.get('admin') == 'Login':
+        if request.form.get('tenant_portal') == 'Login':
             username = request.form['username']
             password = request.form['password']
 
@@ -96,10 +96,10 @@ def register():
 
         if get_user(username):
             new_id = add_user(username, password)
-            error = "Registration sucessful. Please login"
+            error = "Registration sucessful. Please log in."
             return render_template('admin.html', error = error)
         else:
-            error = f"Username {username} not available"
+            error = "Username {username} not available"
         
 
     return render_template('register.html', error = error, id = new_id)
