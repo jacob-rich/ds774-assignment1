@@ -95,20 +95,21 @@ def register():
         print("DEBUG-------------------------------------------------------------------POST")
         username = request.form['username']
         password = request.form['password']
+        print("DEBUG-------------------------------------------------------------------username = " + username)
+        print("DEBUG-------------------------------------------------------------------password = " + password)
 
         print(get_user(username))
         if get_user(username):
             print("DEBUG-------------------------------------------------------------------GET_USER")
             new_id = add_user(username, password)
             print("DEBUG-------------------------------------------------------------------NEW_ID")
-            error = "Registration sucessful. Please log in."
+            error = "Registration successful. Please log in."
             print("DEBUG-------------------------------------------------------------------ERROR")
             return render_template('tenant_portal.html', error = error)
         else:
             print("DEBUG-------------------------------------------------------------------ELSE")
             error = f"Username {username} is not available"
         
-
     return render_template('register.html', error = error, id = new_id)
 
 
