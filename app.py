@@ -89,7 +89,7 @@ def register():
     error = False
     new_id = False
 
-    # If user submiited form to add a user
+    # If user submitted form to add a user
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -99,7 +99,7 @@ def register():
             error = "Registration sucessful. Please log in."
             return render_template('admin.html', error = error)
         else:
-            error = "Username {username} not available"
+            error = f"Username {username} not available"
         
 
     return render_template('register.html', error = error, id = new_id)
