@@ -52,15 +52,16 @@
       {% else %}
       <!-- Login Form -->
       <div class="form-group">
-        <h1>Log In</h1>
+        <h3>Tenant Portal</h3>
+        <h4>Log In or Register</h4>
         {% if error %}
-        <h3 style="color:red"> {{ error }} </h3>
+        <p style="color:red"> {{ error }} </p>
         {% endif %}
         <form action="" method="post" name="admin">
           <input class="form-control" type="text" name="username" placeholder="Username" required /><br />
           <input class="form-control" type="password" name="password" placeholder="Password" required /> <br />
           <input class="btn btn-primary btn-lg" name="admin" type="submit" value="Login" />
-          <h3>Don't have a login? Register now:</h3>
+          
           <a href="{{ url_for('register')}}" class="btn btn-primary btn-lg" role="button">Register</a>
         </form>
       </div>
