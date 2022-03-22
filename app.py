@@ -69,7 +69,7 @@ def tenant_portal():
             
             # login was not sucessful, show error message
             else:
-                error = 'Invalid Username or Password'
+                error = 'Invalid username or password'
         
         # if form was logout button, end user session
         elif request.form.get('admin')  == 'Logout':
