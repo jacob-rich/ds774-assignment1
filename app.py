@@ -54,7 +54,7 @@ def tenant_portal():
     if request.method == 'POST':
 
         # If the form was Login, perform log in steps
-        if request.form.get('tenant_portal') == 'Login':
+        if request.form.get('tenant_portal') == 'Log in':
             username = request.form['username']
             password = request.form['password']
 
