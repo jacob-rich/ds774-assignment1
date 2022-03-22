@@ -23,7 +23,15 @@ body
 
 /* Jacob's styles */
 
+.rounded-circle
+{
+    border: 1px solid;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    }
+
 .jumbotron
 {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("banner.jpg");
-}  
+}

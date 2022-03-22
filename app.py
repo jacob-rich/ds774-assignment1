@@ -7,9 +7,6 @@ app = Flask(__name__)
 
 app.secret_key = "JACOB"
 
-
-#test comment
-
 @app.route("/")
 def home():
     return render_template('home.html')
