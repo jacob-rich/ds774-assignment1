@@ -25,10 +25,11 @@ body
 
 .rounded-circle
 {
+    border: 1px solid white;
     border-radius: 50%;
     width: 200px;
     height: 200px;
-    }
+}
 
 .jumbotron
 {
