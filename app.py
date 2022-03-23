@@ -71,7 +71,7 @@ def tenant_portal():
             if result:
                 session['user_id'] = result
                 records = get_records()
-                # print(records)
+                print('DEBUG-----------------------------------------records = ' + records)
             
             # login was not sucessful, show error message
             else:
