@@ -53,15 +53,19 @@ def tenant_portal():
     # If method was POST, a form was submitted
     if request.method == 'POST':
 
-        print('DEBUG----------------------------------------request.form.get(\'admin\') = ' + request.form.get('admin'))
+        # print('DEBUG----------------------------------------request.form.get(\'admin\') = ' + request.form.get('admin'))
         # If the form was Login, perform log in steps
         if request.form.get('admin') == 'Log In':
             username = request.form['username']
             password = request.form['password']
 
+            print('DEBUG----------------------------------------username = ' + username)
+            print('DEBUG----------------------------------------password = ' + password)
+
             # pass username and password from the form to our login logic
             result = login_user(username, password)
-            print('DEBUG----------------------------------------request.form.get(\'admin\') = ' + request.form.get('admin'))
+            print('DEBUG----------------------------------------result (of login_user()) = ' + result)
+            #print('DEBUG----------------------------------------request.form.get(\'admin\') = ' + request.form.get('admin'))
 
             # If login was successful, create a session for the user, and load data, show data onpage
             if result:
