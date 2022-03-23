@@ -64,7 +64,7 @@ def tenant_portal():
 
             # pass username and password from the form to our login logic
             result = login_user(username, password)
-            print('DEBUG----------------------------------------result (of login_user()) = ' + result)
+            print('DEBUG----------------------------------------result (of login_user()) = ' + str(result))
             #print('DEBUG----------------------------------------request.form.get(\'admin\') = ' + request.form.get('admin'))
 
             # If login was successful, create a session for the user, and load data, show data onpage
