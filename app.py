@@ -148,7 +148,7 @@ def edit():
             message = request.form['message']
             print(fname, lname, eaddress, message)
             edit_record(msg_id, fname, lname, eaddress, message)
-            return redirect('/admin')
+            return redirect('/tenant_portal')
 
         elif request.form.get('edit') == 'cancel':
             return redirect('/tenant_portal')
