@@ -151,11 +151,11 @@ def edit():
             return redirect('/admin')
 
         elif request.form.get('edit') == 'cancel':
-            return redirect('/admin')
+            return redirect('/tenant_portal')
         
         elif request.form.get('admin') == 'Delete':
             delete_record(msg_id)
-            return redirect('/admin')
+            return redirect('/tenant_portal')
 
 
     entry = get_single_record(msg_id)
