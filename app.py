@@ -27,22 +27,24 @@ def directory():
 def events():
     return render_template('events.html')
 
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-    message = ''
-    if request.method == 'POST':
-        fname = request.form['fname']
-        lname = request.form['lname']
-        eaddress = request.form['eaddress']
-        message = request.form['message']
-        result = contact_form(fname, lname, eaddress, message)
+# @app.route('/contact', methods=['GET', 'POST'])
+# def contact():
+#     message = ''
+#     if request.method == 'POST':
+#         # orange are the values of the "name" fields of the <input> elements in the html documents
+#         # blue are variable names to store the values that the user inputted in those <input> elements
+#         fname = request.form['fname']
+#         lname = request.form['lname']
+#         eaddress = request.form['eaddress']
+#         message = request.form['message']
+#         result = contact_form(fname, lname, eaddress, message)
 
-        if result:
-            return render_template('contact.html', message='Thank you for your submission')
-        else:
-            return render_template('contact.html', message='Error with submission')
-    else:
-        return render_template('contact.html', message=message)
+#         if result:
+#             return render_template('contact.html', message='Thank you for your submission')
+#         else:
+#             return render_template('contact.html', message='Error with submission')
+#     else:
+#         return render_template('contact.html', message=message)
 
 @app.route("/tenant_portal", methods=['GET', 'POST'])
 def tenant_portal():
@@ -71,7 +73,7 @@ def tenant_portal():
             if result:
                 session['user_id'] = result
                 records = get_records()
-                print('DEBUG-----------------------------------------records = ' + records)
+                #print('DEBUG-----------------------------------------records = ' + records)
             
             # login was not sucessful, show error message
             else:
@@ -81,6 +83,22 @@ def tenant_portal():
         elif request.form.get('admin') == 'Logout':
             session.pop('user_id')
 
+        elif request.form.get('admin') == 'Submit request':
+        
+            # orange are the values of the "name" fields of the <input> elements in the html documents
+            # blue are variable names to store the values that the user inputted in those <input> elements
+            fname = request.form['fname']
+            lname = request.form['lname']
+            eaddress = request.form['eaddress']
+            message = request.form['message']
+            result = contact_form(fname, lname, eaddress, message)
+
+            if result:
+                records = get_records()
+                return render_template('tenant_portal.html', message='Thank you for your submission', records = records)
+
+            else:
+                return render_template('tenant_portal.html', message='Error with submission')
         
     # if user is logged in previously, show data. If no session, data is not retireved
     if 'user_id' in session:
@@ -104,7 +122,7 @@ def register():
         print("DEBUG-------------------------------------------------------------------username = " + username)
         print("DEBUG-------------------------------------------------------------------password = " + password)
 
-        print(get_user(username))
+        # print(get_user(username))
         if get_user(username):
             print("DEBUG-------------------------------------------------------------------GET_USER")
             new_id = add_user(username, password)

@@ -21,7 +21,7 @@ def contact_form(fname, lname, eaddress, message):
     
     conn = connect_to_db()
 
-    sql = f"INSERT INTO contacts(fname,lname,eaddress,message) VALUES('{fname}', '{lname}', '{eaddress}', '{message}');"
+    sql = f"INSERT INTO maintenance_requests(fname,lname,eaddress,message) VALUES('{fname}', '{lname}', '{eaddress}', '{message}');"
     try:
 
         # create a new cursor
@@ -128,7 +128,7 @@ def login_user(user, password):
 def get_records():
     conn = connect_to_db()
 
-    sql = f"SELECT * FROM contacts ORDER BY message_id ASC;"
+    sql = f"SELECT * FROM maintenance_requests ORDER BY maintenance_request_id ASC;"
 
     try:
 
@@ -150,10 +150,10 @@ def get_records():
         if conn is not None:
             conn.close()
 
-def get_single_record(message_id):
+def get_single_record(maintenance_request_id):
     conn = connect_to_db()
 
-    sql = f"SELECT * FROM contacts where message_id = '{message_id}';"
+    sql = f"SELECT * FROM maintenance_requests where maintenance_request_id = '{maintenance_request_id}';"
 
     try:
 
@@ -175,10 +175,10 @@ def get_single_record(message_id):
         if conn is not None:
             conn.close()
 
-def edit_record(message_id, fname, lname, eaddress, message):
+def edit_record(maintenance_request_id, fname, lname, eaddress, message):
     conn = connect_to_db()
 
-    sql = f"update contacts set fname='{fname}',lname='{lname}',eaddress='{eaddress}',message='{message}' where message_id='{message_id}';"
+    sql = f"update maintenance_requests set fname='{fname}',lname='{lname}',eaddress='{eaddress}',message='{message}' where maintenance_request_id='{maintenance_request_id}';"
 
     try:
 
@@ -199,11 +199,11 @@ def edit_record(message_id, fname, lname, eaddress, message):
             conn.close()
 
 
-def delete_record(message_id):
+def delete_record(maintenance_request_id):
     
     conn = connect_to_db()
 
-    sql = f"DELETE FROM contacts WHERE message_id = {message_id};"
+    sql = f"DELETE FROM maintenance_requests WHERE maintenance_request_id = {maintenance_request_id};"
 
     try:
 

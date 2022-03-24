@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block title %}<title>Tenant Portal</title>{% endblock %}
 {% set active_page = "tenant_portal" %}
@@ -16,6 +17,34 @@
         </form>
       </div>
 
+      <div class="form-group">
+        <form method="post" action="">
+          <div class="col-sm">
+              <div class="row">
+                  <div class="col-sm-6 form-group">
+                      <input class="form-control" id="name" name="fname" placeholder="First Name" type="text"
+                          required>
+                  </div>
+                  <div class="col-sm-6 form-group">
+                      <input class="form-control" id="name" name="lname" placeholder="Last Name" type="text"
+                          required>
+                  </div>
+                  <div class="col-sm-6 form-group">
+                      <input class="form-control" id="email" name="eaddress" placeholder="Email" type="email"
+                          required>
+                  </div>
+              </div>
+              <textarea class="form-control" id="comments" name="message" placeholder="Comment"
+                  rows="5"></textarea><br>
+              <div class="row">
+                  <div class="col-sm-12 form-group">
+                      <button class="btn btn-info btn-lg" name="admin" type="submit" value="Submit request">Send</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+    </div>
+
       <!-- Show database records here -->
       <table class="table table-striped">
         <thead>
@@ -25,7 +54,7 @@
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email Address</th>
-            <th scope="col">Message</th>
+            <th scope="col">Description of Maintenance Request</th>
             <th scope="col">Manage Entry</th>
           </tr>
         </thead>
