@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 {% block title %}<title>Tenant Portal</title>{% endblock %}
 {% set active_page = "tenant_portal" %}
@@ -8,6 +7,8 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+
+      <h3>Tenant Portal</h3>
 
       <!-- If there is a current user session, display database entries -->
       {% if session['user_id'] %}
@@ -40,7 +41,7 @@
                   rows="5"></textarea><br>
               <div class="row">
                   <div class="col-sm-12 form-group">
-                      <button class="btn btn-info btn-lg" name="admin" type="submit" value="Submit request">Send</button>
+                      <button class="btn btn-info btn-lg" name="admin" type="submit" value="Submit request">Submit request</button>
                   </div>
               </div>
           </div>
@@ -49,8 +50,8 @@
 
     <h5>View all maintenance requests</h5>
 
-      <!-- Show database records here -->
-      <table class="table table-striped">
+    <!-- Show database records here -->
+    <table class="table table-striped">
         <thead>
           <!-- Build header row for data -->
           <tr>
